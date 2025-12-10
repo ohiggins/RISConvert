@@ -112,6 +112,7 @@ def parse_apa_reference(line: str) -> Dict[str, str]:
     authors = original[:year_match.start()].strip()
     if authors.endswith("."):
         authors = authors[:-1].strip()
+    authors=authors+","
     record["AU"] = authors if authors else None
 
     # Text after the year
